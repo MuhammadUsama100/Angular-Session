@@ -1,16 +1,15 @@
+import { AuthComponentComponent } from "./auth-component/auth-component.component";
 import { FirstService } from "./first.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { FirstComponent } from "./first/first.component";
-import { ArrayService } from "./array.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [ArrayService, FirstService],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [FirstService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

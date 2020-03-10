@@ -1,5 +1,13 @@
 <h1>{{ title }}</h1>
 
-<div *ngIf="abcbool; then thenblock; else elseblock">usama</div>
+<!-- <div *ngIf="abcbool; then thenblock; else elseblock">usama</div>
 <ng-template #thenblock>usama affan</ng-template>
-<ng-template #elseblock> usman</ng-template>
+<ng-template #elseblock> usman</ng-template> -->
+
+<div *ngFor="let item of auth">
+  <div>
+    <h4>Name : {{ item.name }}</h4>
+    <h4>Id: {{ item.id }}</h4>
+    <h4>Pass : {{ item.pass }}</h4>
+  </div>
+</div>

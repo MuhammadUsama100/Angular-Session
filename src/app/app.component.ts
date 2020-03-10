@@ -1,7 +1,7 @@
 import { FirstService } from "./first.service";
 import { Component } from "@angular/core";
-import { ArrayService } from "./array.service";
-
+import { AuthComponentComponent } from "./auth-component/auth-component.component";
+import { auth } from "./authObject/auth";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -9,11 +9,12 @@ import { ArrayService } from "./array.service";
 })
 export class AppComponent {
   abcbool = true;
+  public auth = [];
 
   title: string = "usman";
   array;
-  constructor(service: FirstService) {
-    //let arrayObject = new ArrayService();
-    this.array = service.getArrayElements();
+  constructor(private service: FirstService) {}
+  ngOnInit() {
+    this.service.getArrayElements().subscribe(data => (this.auth = data));
   }
 }
